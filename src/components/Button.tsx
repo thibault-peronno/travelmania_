@@ -5,7 +5,7 @@ interface ButtonProps {
     textBg:string;
 
 }
-function Button(props: Readonly<ButtonProps> ) {
+function Button(props: Readonly<ButtonProps>) {
     const buttonClass = `bg-${props.textBg} text-${props.textColor} px-3.5 py-2 rounded text-lg font-bold hover:scale-105`;
     return (
         <div>
@@ -14,4 +14,4 @@ function Button(props: Readonly<ButtonProps> ) {
     )
 }
 
-export default Button
+export default Button;

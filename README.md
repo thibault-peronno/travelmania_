@@ -16,7 +16,7 @@ npm ci
 To have the tailwind css file
 
 ```bash
-npx tailwindcss -i ./src/assets/style/input.css -o ./src/assets/style/output.css --watch
+npx tailwindcss -i ./src/index.css -o ./src/assets/style/output.css --watch
 ```
 Check the tailwind.config.js file on content part. It is where we indicate at tailwind where it has to look to create his file.
 Check the index.html file, normally you have this line ```<link href="./src/assets/style/output.css" rel="stylesheet">```
