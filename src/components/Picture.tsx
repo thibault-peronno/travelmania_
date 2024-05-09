@@ -6,9 +6,9 @@ interface PictureProps {
 
 function Picture(props: Readonly<PictureProps>) {
     const sizeClasses: { [key: string]: string } = {
-        small: 'w-4 h-4',
-        medium: 'w-8 h-8',
-        large: 'w-16 h-16',
+      smallWidth: 'w-52',
+      mediumWidth: 'w-80',
+      largeWidth: 'w-96',
      };
 
      const size:string = sizeClasses[props.size];
