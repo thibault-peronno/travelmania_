@@ -4,6 +4,10 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  safelist: [
+    "bg-primary",
+    "bg-second"
+  ],
   theme: {
     fontFamily: {
       sans: ["Rubik", "sans-serif"],

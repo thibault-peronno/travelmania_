@@ -6,9 +6,9 @@ function Home() {
     return (
         <section className="pt-10">
             <div className="flex items-center flex-col">
-                <h1 className="text-5xl font-bold mb-10"><span className="text-7xl text-evidence_1">Organise</span> ton voyage.</h1>
+                <h1 className="text-5xl font-bold mb-10 text-center"><span className="text-7xl text-evidence_1">Organise</span> ton voyage.</h1>
                 <Picture src={homeImage} size="smallWidth" alt=" "/>
-                <Button text="Commence l'aventure" textColor="textColor" textBg="primary"/>
+                <Button text="Commence l'aventure" textColor="textColor" textBg="second" sizeButon="fullWidth"/>
             </div>
         </section>
     )
