@@ -1,6 +1,6 @@
-import Picture from "./Picture";
 import { Link } from "react-router-dom";
 
+import Icon from "./Icon";
 import connectLogo from "../assets/images/icons/connexion.png";
 
 function Header() {
@@ -9,7 +9,7 @@ function Header() {
     <nav>
        <Link to="#">Accueil</Link>
     </nav>
-      <Picture src={connectLogo} size="medium" alt="se connecter" />
+      <Icon src={connectLogo} size="medium" alt="se connecter" />
     </div>
   );
 }
