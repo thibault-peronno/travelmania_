@@ -4,6 +4,7 @@ interface ButtonProps {
     textColor:string;
     textBg:string;
     sizeButon:string
+    sizeFont:string
 
 }
 function Button(props: Readonly<ButtonProps>) {
@@ -12,8 +13,15 @@ function Button(props: Readonly<ButtonProps>) {
         mediumWidth: 'w-56',
         smallWidth: 'w-26'
     };
+    const sizeFontButonClass: {[key:string]: string} = {
+        medium: 'text-base',
+        large: 'text-lg',
+        xLarge: 'text-xl',
+        xxLarge: 'text-3xl'
+    };
     const sizeButton:string = sizeButonClass[props.sizeButon]
-    const buttonClass = `bg-${props.textBg} text-${props.textColor} ${sizeButton} px-3.5 py-2 rounded text-lg font-bold hover:scale-105`;
+    const sizeFontButton:string = sizeFontButonClass[props.sizeFont]
+    const buttonClass = `bg-${props.textBg} text-${props.textColor} ${sizeButton} ${sizeFontButton} px-3.5 py-2 rounded font-bold hover:scale-105`;
     return (
         <div className="min-w-full">
             <button className={buttonClass}>{props.text}</button>
