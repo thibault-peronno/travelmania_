@@ -6,7 +6,9 @@ export default {
   ],
   safelist: [
     "bg-primary",
-    "bg-second"
+    "bg-second",
+    "evidence_1",
+    "evidence_2"
   ],
   theme: {
     fontFamily: {
