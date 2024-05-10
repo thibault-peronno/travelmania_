@@ -558,6 +558,10 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -628,6 +632,24 @@ video {
 
 .rounded {
   border-radius: 0.25rem;
+}
+
+.border-t-4 {
+  border-top-width: 4px;
+}
+
+.border-t-\[1px\] {
+  border-top-width: 1px;
+}
+
+.border-second {
+  --tw-border-opacity: 1;
+  border-color: rgb(164 189 1 / var(--tw-border-opacity));
+}
+
+.border-primary {
+  --tw-border-opacity: 1;
+  border-color: rgb(103 148 54 / var(--tw-border-opacity));
 }
 
 .bg-background {
