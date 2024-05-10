@@ -2,7 +2,7 @@ import Picture from "../components/Picture";
 import homeImage from "../assets/images/pictures/home.png";
 import Button from "../components/Button";
 
-function Home() {
+function HomePage() {
     return (
         <section className="pt-10">
             <div className="flex items-center flex-col">
@@ -14,4 +14,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default HomePage;

@@ -5,7 +5,7 @@ import connectLogo from "../assets/images/icons/connexion.png";
 
 function Header() {
   return (
-      <div className="p-2.5 flex justify-between items-center">
+      <div className="p-2.5 flex justify-between items-center border-b-[1px] border-primary">
     <nav>
        <Link to="#">Accueil</Link>
     </nav>
