@@ -1,18 +1,12 @@
-import { useState } from "react";
+import { useAppSelector, /*useAppDispatch*/ } from "../hooks";
+import { handleChangeFielLogin } from "../features/login/loginSlice";
 import Button from "../components/Button";
 
 function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const email = useAppSelector((state) => state.loginReducer.email);
+  const password = useAppSelector((state) => state.loginReducer.password);
 
-  const handleChangeFielLogin = (value: string, input: string) => {
-    if (input === "email") {
-      setEmail(value);
-    }
-    if (input === "password") {
-      setPassword(value);
-    }
-  };
+
   return (
     <div>
       <form className="bg-second p-5 rounded flex flex-col">
@@ -22,7 +16,7 @@ function LoginPage() {
           id="email"
           placeholder="exemple@gmail.com"
           value={email}
-          onChange={(evt) => handleChangeFielLogin(evt.target.value, "email")}
+          onChange={(evt) => handleChangeFielLogin(evt.target.value)}
           className="p-2 rounded h-14"
         />
         <label htmlFor="password">Mot de passe</label>
@@ -32,7 +26,7 @@ function LoginPage() {
           placeholder="********"
           value={password}
           onChange={(evt) =>
-            handleChangeFielLogin(evt.target.value, "password")
+            handleChangeFielLogin(evt.target.value)
           }
           className="p-2 rounded h-14 mb-5"
         />
