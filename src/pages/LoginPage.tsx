@@ -28,7 +28,7 @@ function LoginPage() {
           onChange={(evt) =>dispatch(handleChangeFielLogin({value: evt.target.value, type: evt.target.id})) }
           className="p-2 rounded h-14 mb-5"
         />
-        <Button text="Se connecter" textColor="textColor" textBg="evidence_2" />
+        <Button type="submit" text="Se connecter" textColor="textColor" textBg="evidence_2" />
       </form>
     </div>
   );
