@@ -5,13 +5,17 @@ import './index.css';
 import Header from './components/Header.tsx';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Footer from './components/Footer.tsx';
+import store from './store';
+import { Provider } from 'react-redux';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Router>
-      <Header />
-      <App />
-      <Footer />
+      <Provider store={store}>
+        <Header />
+        <App />
+        <Footer />
+      </Provider>
     </Router>
   </React.StrictMode>,
 )
