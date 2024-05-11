@@ -6,10 +6,15 @@ function LoginPage() {
   const email = useAppSelector((state) => state.loginReducer.email);
   const password = useAppSelector((state) => state.loginReducer.password);
   const dispatch = useAppDispatch();
+  const handleSubmitLogin = (evt: { preventDefault: () => void; }) => {
+    evt.preventDefault();
+    console.log('handleSubmitLogin');
+    // dispatch(login())
+}
 
   return (
     <div>
-      <form className="bg-second p-5 rounded flex flex-col">
+      <form className="bg-second p-5 rounded flex flex-col" onSubmit={handleSubmitLogin}>
         <label htmlFor="email">Email</label>
         <input
           type="email"
