@@ -7,6 +7,8 @@ const axuiosInstance = axios.create({
 
 class AuthService {
     async login(email:string, password:string) {
+        console.log("login in auth service");
+        
         const axiosReponse = axuiosInstance.post('login', {
             email: email,
             password: password
@@ -17,6 +19,8 @@ class AuthService {
         .catch(function (error){
             return error;
         });
+        console.log(axiosReponse);
+        
         return axiosReponse;
     }
 

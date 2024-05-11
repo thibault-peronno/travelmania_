@@ -1,15 +1,18 @@
 import { useAppSelector, useAppDispatch } from "../hooks";
-import { handleChangeFielLogin } from "../features/login/loginSlice";
+import { handleChangeFielLogin } from "../features/auth/authSlice";
 import Button from "../components/Button";
+import AuthActions from "../features/auth/authActions";
+
+const authActions = new AuthActions();
 
 function LoginPage() {
-  const email = useAppSelector((state) => state.loginReducer.email);
-  const password = useAppSelector((state) => state.loginReducer.password);
+  const email = useAppSelector((state) => state.authReducer.email);
+  const password = useAppSelector((state) => state.authReducer.password);
   const dispatch = useAppDispatch();
   const handleSubmitLogin = (evt: { preventDefault: () => void; }) => {
     evt.preventDefault();
     console.log('handleSubmitLogin');
-    // dispatch(login())
+    dispatch(authActions.login({ email, password }))
 }
 
   return (
