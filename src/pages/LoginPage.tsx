@@ -1,11 +1,11 @@
-import { useAppSelector, /*useAppDispatch*/ } from "../hooks";
+import { useAppSelector, useAppDispatch } from "../hooks";
 import { handleChangeFielLogin } from "../features/login/loginSlice";
 import Button from "../components/Button";
 
 function LoginPage() {
   const email = useAppSelector((state) => state.loginReducer.email);
   const password = useAppSelector((state) => state.loginReducer.password);
-
+  const dispatch = useAppDispatch();
 
   return (
     <div>
@@ -16,7 +16,7 @@ function LoginPage() {
           id="email"
           placeholder="exemple@gmail.com"
           value={email}
-          onChange={(evt) => handleChangeFielLogin(evt.target.value)}
+          onChange={(evt) => dispatch(handleChangeFielLogin({value : evt.target.value, type: evt.target.id}))}
           className="p-2 rounded h-14"
         />
         <label htmlFor="password">Mot de passe</label>
@@ -25,12 +25,10 @@ function LoginPage() {
           id="password"
           placeholder="********"
           value={password}
-          onChange={(evt) =>
-            handleChangeFielLogin(evt.target.value)
-          }
+          onChange={(evt) =>dispatch(handleChangeFielLogin({value: evt.target.value, type: evt.target.id})) }
           className="p-2 rounded h-14 mb-5"
         />
-        <Button text="Se connecter" textColor="textColor" textBg="evidence_2"/>
+        <Button text="Se connecter" textColor="textColor" textBg="evidence_2" />
       </form>
     </div>
   );

@@ -5,6 +5,10 @@ interface LoginState {
     email:string
     password:string
 }
+interface FieldLoginPayload {
+    type: string;
+    value: string;
+}
 
 /* initialisation des variable nécessaire à ce state */
 const initialState: LoginState = {
@@ -16,13 +20,13 @@ export const loginSlice = createSlice({
     name: 'loginState',
     initialState,
     reducers: {
-        handleChangeFielLogin: (state, action:PayloadAction<string>) => {
-            console.log(action.payload);
-            if (action.payload === "email") {
-                state.email = action.payload;
+        handleChangeFielLogin: (state, action:PayloadAction<FieldLoginPayload>) => {
+            // console.log(action.payload);
+            if (action.payload.type === "email") {
+                state.email = action.payload.value;
               }
-              if (action.payload === "password") {
-                state.password = action.payload;
+              if (action.payload.type === "password") {
+                state.password = action.payload.value;
               }
         },
     },
