@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import authReducer from "./features/auth/authSlice";
+import spinnerReducer from "./features/spinnerSlice";
 
 const store = configureStore({
   reducer: {
     authReducer: authReducer,
+    spinnerReducer: spinnerReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

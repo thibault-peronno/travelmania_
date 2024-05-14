@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import AuthActions from './authActions';
-// import type { RootState } from '../../store';
 
 const authActions = new AuthActions();
 
@@ -13,49 +12,42 @@ interface FieldLoginPayload {
     value: string;
 }
 
-/* initialisation des variable nécessaire à ce state */
+/* initial variable to this state */
 const initialState: LoginState = {
     email: "thibault@santiane.com",
     password:"password!"
 }
+
 
 export const authSlice = createSlice({
     name: 'loginState',
     initialState,
     reducers: {
         handleChangeFielLogin: (state, action:PayloadAction<FieldLoginPayload>) => {
-            // console.log(action.payload);
             if (action.payload.type === "email") {
                 state.email = action.payload.value;
-              }
-              if (action.payload.type === "password") {
+            }
+            if (action.payload.type === "password") {
                 state.password = action.payload.value;
-              }
+            }
         },
-        
-        // login: async (state)=>{
-        //     const response = await authService.login(state.email, state.password)
-        //     console.log(response);
-            
-        // }
-    },
-    extraReducers: (builder) => {
-        builder
-         .addCase(authActions.login.pending, () => {
-            // Gérer l'état de chargement
+        },
+        extraReducers: (builder) => {
+            builder
+            .addCase(authActions.login.pending, () => {
+                /* I could use this part to display the spinner, if my property was manage on this state */
           })
          .addCase(authActions.login.fulfilled, (state, action) => {
             console.log('fulfilled', state, action);
-            
-            // Gérer l'état de réussite
+            /* add token here to update the token */
           })
          .addCase(authActions.login.rejected, () => {
-            // Gérer l'état d'échec
+            console.log('slice rejected')
           });
       },
 });
 
-/* destructuring pour exporter les actions */
+/* destructuring to export actions */
 export const { handleChangeFielLogin } = authSlice.actions;
 
 export default authSlice.reducer;
