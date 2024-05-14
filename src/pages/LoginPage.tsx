@@ -16,6 +16,7 @@ function LoginPage() {
   const handleSubmitLogin = async (evt: { preventDefault: () => void }) => {
     evt.preventDefault();
     const resp = await dispatch(authActions.login({ email, password }));
+    console.log('login page', resp);    
     if(resp.payload ===  undefined){
       alert('Il y a eu un problème');
       return;

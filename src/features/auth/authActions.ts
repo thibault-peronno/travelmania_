@@ -9,6 +9,7 @@ const authService = new AuthService();
 type LoginCredentials = {
     email: string;
     password: string;
+    token?:string
   };
   
   class AuthActions {

@@ -6,6 +6,7 @@ const authActions = new AuthActions();
 interface LoginState {
     email:string
     password:string
+    token:string|undefined
 }
 interface FieldLoginPayload {
     type: string;
@@ -15,7 +16,8 @@ interface FieldLoginPayload {
 /* initial variable to this state */
 const initialState: LoginState = {
     email: "thibault@santiane.com",
-    password:"password!"
+    password:"password!",
+    token:""
 }
 
 
@@ -38,8 +40,9 @@ export const authSlice = createSlice({
                 /* I could use this part to display the spinner, if my property was manage on this state */
           })
          .addCase(authActions.login.fulfilled, (state, action) => {
-            console.log('fulfilled', state, action);
+            console.log('fulfilled', 'state', state, "action", action);
             /* add token here to update the token */
+            state.token = action.payload.token;
           })
          .addCase(authActions.login.rejected, () => {
             console.log('slice rejected')
