@@ -20,10 +20,12 @@ export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers : {
-
+        handleUpdateUserData: (state, action) => {
+            console.log('state', state, 'action', action)
+        }
     },
 });
 
-// export const {} = userSlice.actions;
+export const { handleUpdateUserData } = userSlice.actions;
 
 export default userSlice.reducer;
